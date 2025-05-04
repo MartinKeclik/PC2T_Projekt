@@ -211,6 +211,7 @@ public class Database {
 				Float gradeAvg = rs.getFloat("gradeAvg");
 				
 				ArrayList<Integer> grades = new ArrayList<>();
+				
 				if(gradesInString != null && !gradesInString.isEmpty()) {
 					for (String s : gradesInString.split(",")) {
 						try {
