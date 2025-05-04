@@ -11,4 +11,14 @@ public class CyberStudent extends Student {
 		return "Tohle neni morseova abeceda";
 	}
 
+	@Override
+	public String specAbility(Database studentDatabase, int id) {
+		Student student = studentDatabase.getStudent(id);
+	    if (student == null) {
+	        return "Student s ID " + id + " neexistuje.";
+	    }
+	    return "Jmeno: " + student.getName() + ", HashCode: " + student.getName().hashCode() +
+	           "\nPrijmeni: " + student.getSurname() + ", HashCode: " + student.getSurname().hashCode();
+	}
+
 }

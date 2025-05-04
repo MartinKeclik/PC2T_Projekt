@@ -1,0 +1,7 @@
+ID: 5
+Jmeno: Heli
+Prijmeni: Horni
+Rok narozeni: 2018
+Obor: Telekomunikace
+Znamky: 1
+Studijni prumer: 1.0

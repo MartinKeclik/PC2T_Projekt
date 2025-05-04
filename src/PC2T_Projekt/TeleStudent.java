@@ -53,19 +53,28 @@ public class TeleStudent extends Student{
 		this.spec = "Telekomunikace";
 	}
 	
-	public static String specAbility(HashMap<Integer, Student> studentDatabase, int id) {
-		String fullName = studentDatabase.get(id).getName() + " " + studentDatabase.get(id).getSurname();
-		String fullNameInMorse = "";
-		int counter = 1;
-		if(!fullName.isEmpty()) {
-			for(char ch : fullName.toUpperCase().toCharArray()) {
-				if (counter != fullName.length())
-					fullNameInMorse += (MORSE_CODE.get(ch)) + " / ";
-				else
-					fullNameInMorse += (MORSE_CODE.get(ch));
-				counter++;
+	
+	@Override
+	public String specAbility(Database studentDatabase, int id) {
+		if (studentDatabase.isThereSuchStudent(id)) {
+			String name = studentDatabase.getStudent(id).getName();
+			String surname = studentDatabase.getStudent(id).getSurname();
+			String nameInMorse = ""; String surnameInMorse = "";
+			
+			if(!name.isEmpty()) {
+				for (char ch:name.toUpperCase().toCharArray())
+					nameInMorse += (MORSE_CODE.get(ch)) + " ";
 			}
-		}
-		return fullNameInMorse;
+			
+			if(!surname.isEmpty()) {
+				for (char ch:surname.toUpperCase().toCharArray())
+					surnameInMorse += (MORSE_CODE.get(ch)) + " ";
+			}
+			return "Jmeno: " + studentDatabase.getStudent(id).getName() + 
+					", Morseova abeceda: " + nameInMorse + 
+					"\nPrijmeni: " + studentDatabase.getStudent(id).getSurname() + 
+					", Morseova abeceda: " + surnameInMorse;			
+		} else
+			return "Databaze neobsahuje studenta s ID " + id;
 	}
 }

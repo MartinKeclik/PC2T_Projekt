@@ -1,0 +1,7 @@
+ID: 2
+Jmeno: Tonda
+Prijmeni: Tondovic
+Rok narozeni: 2024
+Obor: Telekomunikace
+Znamky: 1, 1, 2
+Studijni prumer: 1.3333334

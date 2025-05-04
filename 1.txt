@@ -1,0 +1,7 @@
+ID: 1
+Jmeno: Alfons
+Prijmeni: Milovany
+Rok narozeni: 2023
+Obor: Telekomunikace
+Znamky: 1, 5
+Studijni prumer: 3.0

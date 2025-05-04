@@ -1,8 +1,10 @@
 package PC2T_Projekt;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.stream.Collectors;
 
-public class Student {
+public abstract class Student {
 	String name, surname, spec;
 	int birthYear;
 	float gradeAvg;
@@ -36,8 +38,10 @@ public class Student {
 		return this.gradeAvg;
 	}
 	
-	public ArrayList<Integer> getGrades(){
-		return this.grades;
+	public String getGrades() {
+		return grades.stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining(", "));
 	}
 	
 	public void addGrade(int grade) {
@@ -52,9 +56,8 @@ public class Student {
 				gradesSum += grade;
 			}
 			return gradesSum/numOfGrades;
-		} else {
+		} else
 			return 0.f;
-		}
 	}
 	
 	public void setGradeAvg(float gradeAvg) {
@@ -62,9 +65,6 @@ public class Student {
 	}
 	
 	
-	/*
-	public String specAbility() {
-		return "Toto je specialni funkce studenta";
-	}
-	*/
+	public abstract String specAbility(Database studentDatabase, int id);
+	
 }
